@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Dev/PMS_DF/PMS_Scene/PMS_TiTleScene.unity
     guid: 1c673619c5817c343994cc8944600b5e
+  - enabled: 1
+    path: Assets/Dev/PMS_DF/PMS_Scene/Test_Scene/PMS_TitleScene.unity
+    guid: 9028aad1e37433a418a5c33f53fd0194
+  - enabled: 1
+    path: Assets/Dev/PMS_DF/PMS_Scene/Test_Scene/PMS_InGameScene.unity
+    guid: a2de4f8b5af49294faf242caaef35971
   m_configObjects: {}

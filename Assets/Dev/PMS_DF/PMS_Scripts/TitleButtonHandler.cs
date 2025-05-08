@@ -48,7 +48,7 @@ public class TitleButtonHandler : MonoBehaviour
 
     private void StartGame()
     {
-        SceneManagerEx.Instance.LoadSceneWithFade("PMS_Scene");
+        SceneManagerEx.Instance.LoadSceneWithFade("PMS_InGameScene");
         Debug.Log("¾À ÀüÈ¯");
     }
 }

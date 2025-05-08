@@ -1,12 +1,13 @@
-using Unity.VisualScripting;
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 using Scripts.Manager;
 
-public class PlayerHp : MonoBehaviour
+public class PMS_PlayerHp : MonoBehaviour
 {
     public int CurrentHealth = 5;  // 처음 5로 시작
-    public int MaxHealth = 5;  
+    public int MaxHealth = 5;
     public int LimitMaxHealth = 10;
     public bool isDead = false;
     public bool isHit = false;
@@ -20,7 +21,6 @@ public class PlayerHp : MonoBehaviour
 
     [SerializeField] public GameObject GameClearUI;
     [SerializeField] public GameObject GameOverUI;
-
 
     private void Awake()
     {
@@ -45,7 +45,7 @@ public class PlayerHp : MonoBehaviour
     public void TakeDamage(int damage)
     {
         // 중복으로 피격 방지
-        if (isDead || isHit) return; 
+        if (isDead || isHit) return;
 
         CurrentHealth -= damage;
 
@@ -58,6 +58,7 @@ public class PlayerHp : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             PlayerDeath();
+            TMP_UIManager.Instance.OpenUI(GameOverUI);
             return;
         }
         if (animator != null)
@@ -65,13 +66,13 @@ public class PlayerHp : MonoBehaviour
             // 죽지 않은 경우 해당 트리거(피격 트리거) 실행
             animator.SetTrigger("HitTrigger");
         }
-        
+
         //피격 애니메이션 끝날 때 까지 플레이어의 공격을 막음
         StartCoroutine(HitLock());
     }
 
     public void PlayerDeath()
-    {  
+    {
         if (isDead) return;
         isDead = true;
 
@@ -95,7 +96,6 @@ public class PlayerHp : MonoBehaviour
 
         // 플레이어 캐릭터 사망 후 관성 작용 제어
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-        TMP_UIManager.Instance.OpenUI(GameOverUI);
     }
 
     // 플레이어 체력 회복 시 호출

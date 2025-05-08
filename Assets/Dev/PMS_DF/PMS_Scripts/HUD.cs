@@ -22,9 +22,6 @@ public class HUD : MonoBehaviour
 
 
     // TODO: 나중에 GameManager에서 받아오도록 연결
-    float curExp = 3;
-    float maxExp = 10;
-    int level = 999;
     int kill = 100;
 
     private void Start()
@@ -59,11 +56,13 @@ public class HUD : MonoBehaviour
 
     private void UpdateHp()
     {
+        hpSlider.maxValue = hp.GetMaxHealth();
         hpSlider.value = hp.GetCurrentHealth();
     }
 
     private void UpdateExp()
     {
+        expSlider.maxValue = playerExp.expToLevelUp;
         expSlider.value = playerExp.currentExp;
     }
 

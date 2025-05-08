@@ -17,5 +17,6 @@ public class GameClearFailedUI : MonoBehaviour
     {
         //타이틀 씬 전화 메서드 추가
         SceneManagerEx.Instance.LoadSceneWithFade("PMS_TiTleScene");
+        TMP_UIManager.Instance.CloseCurrentUI();
     }
 }
