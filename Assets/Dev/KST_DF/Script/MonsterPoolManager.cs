@@ -50,6 +50,8 @@ public class MonsterPoolManager : SimpleSingleton<MonsterPoolManager>
     {
         foreach (var mon in m_pools[index])
         {
+            if (mon == null) continue;
+
             if (!mon.activeSelf)
             {
                 mon.SetActive(true);

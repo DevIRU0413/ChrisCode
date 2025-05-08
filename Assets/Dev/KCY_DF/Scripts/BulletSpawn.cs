@@ -79,7 +79,7 @@ public class BulletSpawn : MonoBehaviour
         transform.position += bulletDir * bulletSpeed * Time.deltaTime;
 
         // 탄환 회전 (직선형으로 날아가는 탄환은 부자연스러움)
-        transform.Rotate(0f, 0f, 360f * Time.deltaTime);
+        // transform.Rotate(0f, 0f, 360f * Time.deltaTime);
 
         //  일정 거리 이상 떨어질 때 탄 없에기
         if (Vector3.Distance(bulletPos, transform.position) > maxDistance)
@@ -89,10 +89,11 @@ public class BulletSpawn : MonoBehaviour
     }
 
     //  몬스터와 부딪히는 경우 탄 없애기
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionStay(Collision other)
     {
-        if (other.CompareTag("Monster"))
+        if (other.gameObject.CompareTag("Monster"))
         {
+            Debug.Log("충돌!!");
             // 타격음 재생 _ 수동설정
             if (hitSound != null)
             {
@@ -100,7 +101,7 @@ public class BulletSpawn : MonoBehaviour
             }
          
 
-            MonsterBase monsterBase = other.GetComponent<MonsterBase>();
+            MonsterBase monsterBase = other.gameObject.GetComponent<MonsterBase>();
             if (monsterBase != null)
             {
                 monsterBase.TakeDamage(attackPower);
@@ -117,7 +118,7 @@ public class BulletSpawn : MonoBehaviour
                 Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
                 foreach (var hit in hits)
                 {
-                    if (hit.CompareTag("Monster") && hit != other)
+                    if (hit.CompareTag("Monster") && hit != other.gameObject)
                     {
                         MonsterBase otherMonster = hit.GetComponent<MonsterBase>();
                         if (otherMonster != null)
@@ -137,7 +138,7 @@ public class BulletSpawn : MonoBehaviour
 
             ReturnPool(); // 관통 없음 제거
         }
-        else if (!other.CompareTag("Player"))
+        else if (!other.gameObject.CompareTag("Player"))
         {
             // 벽이나 기타 오브젝트에 부딪히면 파괴
             ReturnPool();

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1763353877452370191}
   - component: {fileID: 1877406362964352960}
   - component: {fileID: 4512908172828938112}
-  - component: {fileID: 6092513182855713659}
   - component: {fileID: -6508348627108084132}
   - component: {fileID: 6262703547547973219}
+  - component: {fileID: 2952573144203778090}
   m_Layer: 0
   m_Name: SM_Wep_Goblin_Shiv_Bone_01
   m_TagString: Untagged
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237538660743380981}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.614929, y: 0.24310106, z: -8.305062}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &1877406362964352960
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6092513182855713659
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237538660743380981}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43909112140283854, guid: 416dac7e6664466418106393358b6e4a, type: 2}
 --- !u!114 &-6508348627108084132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +104,7 @@ MonoBehaviour:
   hitSound: {fileID: 0}
   explosionSound: {fileID: 0}
   attackPower: 0
-  maxDistance: 10
+  maxDistance: 20
 --- !u!54 &6262703547547973219
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,3 +132,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &2952573144203778090
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237538660743380981}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06541444
+  m_Height: 0.69623727
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.105017506, z: -1.4923882e-15}

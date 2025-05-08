@@ -126,7 +126,7 @@ public class PlayerHp : MonoBehaviour
     }
 
     // 충동 시 데미지 계산
-    private void OnTriggerStay(Collider other)
+   /* private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Monster") && timeSinceLastHit >= untouchableTime)
         {
@@ -136,8 +136,19 @@ public class PlayerHp : MonoBehaviour
             // 몬스터 함수 보고 추후 수정
             //TakeDamage(MonsterBase.attackDamage);  
         }
-    }
+    }*/
 
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Monster") && timeSinceLastHit >= untouchableTime)
+        {
+            TakeDamage(1);
+            timeSinceLastHit = 0f;
+
+            // 몬스터 함수 보고 추후 수정
+            //TakeDamage(MonsterBase.attackDamage);  
+        }
+    }
 
     // 플레이어 피격 시 일정시간 무적 패턴
     public IEnumerator UntouchableTime()

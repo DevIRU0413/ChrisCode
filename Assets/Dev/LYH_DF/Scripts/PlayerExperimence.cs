@@ -3,16 +3,11 @@ using UnityEngine;
 
 public class PlayerExperimence : MonoBehaviour
 {
-
     public int currentExp = 0;
     public int level = 1;
     public int expToLevelUp = 100;
 
     public TraitUIManager traitUIManager;
-
-    private void Awake()
-    {
-    }
 
     public void GainExp(int amount)
     {
@@ -40,14 +35,4 @@ public class PlayerExperimence : MonoBehaviour
             Debug.LogWarning("TraitUIManager가 연결되지 않았습니다.");
         }
     }
-
-    // 임시 레벨업 코드
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GainExp(100);
-        }
-    }
-
 }
