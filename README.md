@@ -45,13 +45,13 @@
 
 | 이름   | GitHub 계정 | 담당 영역 |
 |--------|--------------|------------|
-| 양승준 | https://github.com/DevIRU0413 | 플레이어 시스템 |
-| 박민성 | https://github.com/ParkMinSung2580 | 생존 조건 |
-| 이윤형 | https://github.com/2000yhlee | 몬스터 시스템 |
-| 김채윤 | https://github.com/ch-yun38 | 스킬 시스템 |
-| 김승태 | https://github.com/tiga1207 | UI/UX |
+| 양승준 | https://github.com/DevIRU0413 | 전반적인 시스템 |
+| 박민성 | https://github.com/ParkMinSung2580 | UI/UX |
+| 이윤형 | https://github.com/2000yhlee | 플레이어 능령 구현 |
+| 김채윤 | https://github.com/ch-yun38 | 플레이어블 캐릭터 구현 |
+| 김승태 | https://github.com/tiga1207 | 몬스터블 캐릭터 시스템 |
 
-## 3. 코드 컨베이션
+## 3. 컨벤션
 
 ### 커밋 탬플릿
 | 타입 (type) | 설명 |
