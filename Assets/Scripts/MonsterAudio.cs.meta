@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d2ef31caf2046364285cd21114743285
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shotSound: {fileID: 8300000, guid: 51a75955cea7541b0809fed2de82be21, type: 3}
+  - hurtSound: {fileID: 8300000, guid: 646d5e8a87d4aab4ebb8df843fd09723, type: 3}
+  - slashSound: {fileID: 8300000, guid: 178b03530acb54f18847f85200fff708, type: 3}
+  - deadSound: {fileID: 8300000, guid: 7ac0dfae083d2b94780328d7e42f29e7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

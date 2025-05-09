@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7549553580562179552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5075288350378363462}
+  - component: {fileID: 2002497769436330848}
+  m_Layer: 0
+  m_Name: MonsterPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5075288350378363462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549553580562179552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.061784, y: 13.091, z: 12.151227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002497769436330848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549553580562179552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d689b583697e427aa7897798f3e5909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_prefabs:
+  - {fileID: 3161129422670007100, guid: 0bb623b00041d40adb1d4900c8c78996, type: 3}
+  - {fileID: 944514543498036531, guid: 47f88388742bd674a857c6ac6b6f1569, type: 3}
+  - {fileID: 944514543498036531, guid: f2295973e2c941142ac8a151e5052f9d, type: 3}
+  - {fileID: 7425997435929176841, guid: cd74fac6dc2cc495c802f7b794d820d4, type: 3}
+  - {fileID: 944514543498036531, guid: df84c7438ee37b34c8c4cca871663eb4, type: 3}
+  - {fileID: 944514543498036531, guid: 587b090e483c9cf4f9fc2de35d2781c2, type: 3}
+  - {fileID: 944514543498036531, guid: f27e48f6327094753b4bfe2b5bd8dbf4, type: 3}
+  m_poolSize: 1
