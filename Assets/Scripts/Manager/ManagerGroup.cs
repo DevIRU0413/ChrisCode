@@ -2,7 +2,7 @@ using Scripts.Interface;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts
+namespace Scripts.Manager
 {
     public class ManagerGroup : MonoBehaviour
     {
@@ -14,7 +14,7 @@ namespace Scripts
             {
                 if (m_instance == null)
                 {
-                    const string groupName = "@ManagerGroup";
+                    string groupName = $"@{typeof(ManagerGroup).Name}";
                     GameObject go = GameObject.Find(groupName);
                     if (go == null)
                     {
@@ -38,65 +38,74 @@ namespace Scripts
 
         public void RegisterManager(IManager manager)
         {
-            if (manager == null)
-                return;
-
-            if (m_managers.Contains(manager))
+            if (manager == null || m_managers.Contains(manager))
                 return;
 
             m_managers.Add(manager);
-
-            GameObject go = manager.GetGameObject();
-            if (go != null)
-                go.transform.parent = transform;
+            manager.GetGameObject().transform.parent = transform;
         }
 
         public void RegisterManager(GameObject managerObject)
         {
-            if (managerObject == null)
-                return;
-
-            IManager manager = managerObject.GetComponent<IManager>();
-            if (manager != null)
-                RegisterManager(manager);
+            RegisterManager(managerObject?.GetComponent<IManager>());
         }
 
         public void RegisterManager(params IManager[] managers)
         {
-            for (int i = 0; i < managers.Length; i++)
-                RegisterManager(managers[i]);
+            foreach (IManager m in managers) RegisterManager(m);
         }
 
         public void RegisterManager(params GameObject[] managerObjects)
         {
-            for (int i = 0; i < managerObjects.Length; i++)
-                RegisterManager(managerObjects[i]);
+            foreach (GameObject go in managerObjects) RegisterManager(go);
         }
 
         public void InitializeManagers()
         {
             SortManagersByPriorityAscending();
 
-            for (int i = 0; i < m_managers.Count; i++)
+            foreach (var manager in m_managers)
             {
-                IManager manager = m_managers[i];
                 manager.Initialize();
-
-                GameObject go = manager.GetGameObject();
-                Debug.Log("InIt " + go.name);
-                if (go != null)
-                    go.transform.parent = transform;
+                Debug.Log($"[Init] {manager.GetGameObject().name}");
+                manager.GetGameObject().transform.parent = transform;
             }
         }
 
         public void CleanupManagers()
         {
             SortManagersByPriorityDescending();
-
             for (int i = 0; i < m_managers.Count; i++)
-                m_managers[i].Cleanup();
+            {
+                IManager manager = m_managers[i];
+                GameObject go = manager.GetGameObject();
+
+                Debug.Log($"[Cleanup] {go.name}");
+
+                manager.Cleanup();
+            }
         }
 
+        public void ClearAllManagers()
+        {
+            ClearManagers(true);
+        }
+
+        public void ClearManagers(bool forceClear = false)
+        {
+            for (int i = 0; i < m_managers.Count; i++)
+            {
+                IManager manager = m_managers[i];
+                if (!manager.IsDontDestroy || forceClear)
+                {
+                    GameObject go = manager.GetGameObject();
+
+                    Debug.Log($"[Clear] {go.name}");
+
+                    Destroy(go);
+                }
+            }
+        }
         #endregion
 
         #region PrivateMethod

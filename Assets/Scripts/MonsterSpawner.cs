@@ -27,6 +27,7 @@ public class MonsterSpawner : SimpleSingleton<MonsterSpawner>, IManager
     public UnityAction<int> OnMonsterDieAction;
 
     public int Priority => (int)ManagerPriority.MonsterManager;
+    public bool IsDontDestroy => IsDontDestroyOnLoad;
 
     void Update()
     {
@@ -89,14 +90,9 @@ public class MonsterSpawner : SimpleSingleton<MonsterSpawner>, IManager
         }
     }
 
-    public void Initialize()
-    {
-    }
+    public void Initialize() { }
 
-    public void Cleanup()
-    {
-        throw new NotImplementedException();
-    }
+    public void Cleanup() { }
 
     public GameObject GetGameObject()
     {

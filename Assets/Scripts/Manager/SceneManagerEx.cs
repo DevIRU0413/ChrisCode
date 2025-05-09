@@ -23,6 +23,7 @@ namespace Scripts.Manager
         #region PublicVariables
         public event Action<string> OnSceneLoaded;
         public int Priority => (int)ManagerPriority.SceneManagerEx;
+        public bool IsDontDestroy => IsDontDestroyOnLoad;
         #endregion
 
         #region PublicMethod
@@ -41,10 +42,7 @@ namespace Scripts.Manager
             }
         }
 
-        public void Cleanup()
-        {
-            throw new NotImplementedException();
-        }
+        public void Cleanup() { }
 
         public GameObject GetGameObject()
         {

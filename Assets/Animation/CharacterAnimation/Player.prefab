@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6326149034842810441}
   - component: {fileID: 2849755454395040888}
   - component: {fileID: 5020380471447813057}
-  - component: {fileID: 8409459264330951808}
+  - component: {fileID: 4055907244039333461}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -161,7 +161,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   nearestTarget: {fileID: 0}
---- !u!114 &8409459264330951808
+--- !u!114 &4055907244039333461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

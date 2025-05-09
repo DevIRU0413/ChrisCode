@@ -11,18 +11,18 @@ public class MonsterAudio : MonoBehaviour
     [SerializeField] private AudioClip m_deadSound;
     public void ShootingSound()
     {
-        AudioManager.Instance.PlaySFX(m_shotSound);
+        AudioManager.Instance.PlaySfx(m_shotSound);
     }
     public void HurtSound()
     {
-        AudioManager.Instance.PlaySFX(m_hurtSound);
+        AudioManager.Instance.PlaySfx(m_hurtSound);
     }
     public void SlashSound()
     {
-        AudioManager.Instance.PlaySFX(m_slashSound);
+        AudioManager.Instance.PlaySfx(m_slashSound);
     }
     public void DeadSound()
     {
-        AudioManager.Instance.PlaySFX(m_deadSound);
+        AudioManager.Instance.PlaySfx(m_deadSound);
     }
 }

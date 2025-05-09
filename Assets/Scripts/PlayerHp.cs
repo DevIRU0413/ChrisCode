@@ -49,7 +49,7 @@ public class PlayerHp : MonoBehaviour
         // 피격 시 사운드 _ 수동설정
         if (hitSound != null)
         {
-            AudioManager.Instance.PlaySFX(hitSound);
+            AudioManager.Instance.PlaySfx(hitSound);
         }
 
         if (CurrentHealth <= 0)
@@ -75,7 +75,7 @@ public class PlayerHp : MonoBehaviour
         // 사망 시 사운드 
         if (deathSound != null)
         {
-            AudioManager.Instance.PlaySFX(deathSound);
+            AudioManager.Instance.PlaySfx(deathSound);
         }
 
         if (animator != null)

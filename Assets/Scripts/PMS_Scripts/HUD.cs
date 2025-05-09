@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour
     //hp 저장
     private PlayerHp hp;
 
-    private PlayerExperimence playerExp;
+    private PlayerExperience playerExp;
 
 
     // TODO: 나중에 GameManager에서 받아오도록 연결
@@ -34,7 +34,7 @@ public class HUD : MonoBehaviour
         if (player != null)
         {
             hp = player.GetComponent<PlayerHp>();
-            playerExp = player.GetComponent<PlayerExperimence>();
+            playerExp = player.GetComponent<PlayerExperience>();
         }
     }
 
@@ -64,12 +64,12 @@ public class HUD : MonoBehaviour
 
     private void UpdateExp()
     {
-        expSlider.value = playerExp.currentExp;
+        expSlider.value = playerExp.CurrentExp;
     }
 
     private void UpdateLevel()
     {
-        levelText.text = string.Format("Lv.{0:F0}", playerExp.level);
+        levelText.text = string.Format("Lv.{0:F0}", playerExp.Level);
     }
 
     private void UpdateKill()

@@ -4,39 +4,36 @@ namespace Scripts
 {
     public abstract class SimpleSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        private static T _instance;
-        [SerializeField] private bool _isDontDestroyOnLoad = true; // true면 유지, false면 씬 전환 시 파괴
+        private static T m_instance;
+        [SerializeField] private bool m_isDontDestroyOnLoad = true; // true면 유지, false면 씬 전환 시 파괴
+
+        public bool IsDontDestroyOnLoad => m_isDontDestroyOnLoad;
 
         public static T Instance
         {
             get
             {
-                if (_instance == null)
+                if (m_instance == null)
                 {
-                    _instance = FindObjectOfType<T>();
-
-                    if (_instance == null)
-                    {
+                    m_instance = FindObjectOfType<T>();
+                    if (m_instance == null)
                         Debug.LogError($"[SimpleSingleton] {typeof(T)} 인스턴스가 이 씬에 없습니다.");
-                    }
-
                 }
-                return _instance;
+                return m_instance;
             }
         }
 
         protected virtual void Awake()
         {
-            if (_instance == null)
+            if (m_instance == null)
             {
-                _instance = this as T;
-
-                if (_isDontDestroyOnLoad)
+                m_instance = FindObjectOfType<T>();
+                if (m_isDontDestroyOnLoad)
                 {
                     DontDestroyOnLoad(gameObject);
                 }
             }
-            else if (_instance != this)
+            else if (m_instance != this)
             {
                 Destroy(gameObject);
             }
@@ -44,9 +41,9 @@ namespace Scripts
 
         protected virtual void OnDestroy()
         {
-            if (_instance == this)
+            if (m_instance == this)
             {
-                _instance = null;
+                m_instance = null;
             }
         }
     }

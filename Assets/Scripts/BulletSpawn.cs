@@ -100,7 +100,7 @@ public class BulletSpawn : MonoBehaviour
             // 타격음 재생 _ 수동설정
             if (hitSound != null)
             {
-                AudioManager.Instance.PlaySFX(hitSound); 
+                AudioManager.Instance.PlaySfx(hitSound); 
             }
          
 
@@ -116,7 +116,7 @@ public class BulletSpawn : MonoBehaviour
             {
                 // 폭발음_ 수동설정
                 if (explosionSound != null)
-                { AudioManager.Instance.PlaySFX(explosionSound); }
+                { AudioManager.Instance.PlaySfx(explosionSound); }
 
                 Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
                 foreach (var hit in hits)

@@ -2,12 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// 게임의 승, 패 판단
-// 게임 실행 시간 판단
-// 플레이어블 캐릭터 상태 추적
 namespace Scripts.Manager
 {
-
     public class InGameManager : SimpleSingleton<InGameManager>, IManager
     {
         private bool _isFirstFrameCheck = false;
@@ -29,6 +25,8 @@ namespace Scripts.Manager
         public UnityEvent OnStopStateEntered;
 
         public int Priority => (int)ManagerPriority.InGameManager;
+        public bool IsDontDestroy => IsDontDestroyOnLoad;
+
 
         // IManager
         public void Initialize()
@@ -38,10 +36,9 @@ namespace Scripts.Manager
 
             InitializeState();
         }
-        public void Cleanup()
-        {
 
-        }
+        public void Cleanup() { }
+        
         public GameObject GetGameObject()
         {
             return this.gameObject;

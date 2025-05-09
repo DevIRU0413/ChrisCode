@@ -7,19 +7,8 @@ namespace Scripts.Scene
     {
         public override SceneID SceneID => SceneID.Title;
 
-        public override void Initialize()
+        protected override void Initialize()
         {
-            base.Initialize();
-            
-        }
-
-        public override void LoadManagers()
-        {
-            base.LoadManagers();
-            GameObject[] SubscribeManagers = GameObject.FindGameObjectsWithTag("Manager");
-
-            ManagerGroup.Instance.RegisterManager(SubscribeManagers);
-            ManagerGroup.Instance.InitializeManagers();
         }
     }
 }

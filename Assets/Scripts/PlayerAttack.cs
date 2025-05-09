@@ -71,7 +71,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (attackSound != null)
             {
-                AudioManager.Instance.PlaySFX(attackSound);
+                AudioManager.Instance.PlaySfx(attackSound);
             }
         }
     }

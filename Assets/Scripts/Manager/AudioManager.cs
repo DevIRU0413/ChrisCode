@@ -27,6 +27,8 @@ namespace Scripts.Manager
 
         #region PublicVariables
         public int Priority => (int)ManagerPriority.AudioManager;
+        public bool IsDontDestroy => IsDontDestroyOnLoad;
+
         #endregion
 
         #region PublicMethod
@@ -54,7 +56,7 @@ namespace Scripts.Manager
             m_bgmSource.Play();
         }
 
-        public void PlaySFX(AudioClip clip)
+        public void PlaySfx(AudioClip clip)
         {
             var source = m_sfxSources.FirstOrDefault(s => !s.isPlaying);
             if (source != null && clip != null)

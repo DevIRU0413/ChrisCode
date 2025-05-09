@@ -281,7 +281,6 @@ public class MonsterBase : MonoBehaviour
     {
         if(m_playerPos != null)
         {
-            Debug.Log($"{gameObject.name} : 플레이어에게 공격로직 실행");
             anim.SetTrigger("isAttack");
 
             //공격 이펙트 오브젝트 풀 패턴
