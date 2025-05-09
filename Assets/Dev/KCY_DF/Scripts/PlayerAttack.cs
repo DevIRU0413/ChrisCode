@@ -79,6 +79,8 @@ public class PlayerAttack : MonoBehaviour
     private void ShootInDirection(Vector3 dir)
     {
         Quaternion rot = Quaternion.LookRotation(dir);
+        rot.x = 0f;
+        rot.z = 0f;
         BulletSpawn bullet = BulletSpawn.Spawn(bulletPerfab, attackPoint.position, rot);
         bullet.BulletStartDirection(dir);
         bullet.attackPower = attackPower;

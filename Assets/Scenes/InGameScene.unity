@@ -4473,6 +4473,10 @@ PrefabInstance:
       propertyPath: attackPower
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2849755454395040888, guid: 28a116384a9173e45a5adc7a91cf304a, type: 3}
+      propertyPath: bulletPerfab
+      value: 
+      objectReference: {fileID: 8850541578243383001, guid: dd46d05746610bb4eaf3fc01f357d3db, type: 3}
     - target: {fileID: 5063757393590186309, guid: 28a116384a9173e45a5adc7a91cf304a, type: 3}
       propertyPath: m_Name
       value: Player

@@ -57,6 +57,9 @@ public class BulletSpawn : MonoBehaviour
     private void ReturnPool()
     {
         gameObject.SetActive(false);
+        transform.rotation = Quaternion.identity;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
         pool.Add(this);
     }
 
@@ -97,7 +100,7 @@ public class BulletSpawn : MonoBehaviour
             // 타격음 재생 _ 수동설정
             if (hitSound != null)
             {
-                Scripts.Manager.AudioManager.Instance.PlaySFX(hitSound); 
+                AudioManager.Instance.PlaySFX(hitSound); 
             }
          
 
